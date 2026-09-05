@@ -33,7 +33,7 @@ C로 구현한 대화형 셸입니다. 입력한 명령을 토큰으로 나누�
 | 입력과 해석 | Readline 입력·히스토리, 작은따옴표·큰따옴표 처리, `$NAME`·`$?` 확장 | [parse/](sources/parse/), [token/](sources/token/) |
 | 내장 명령 | `echo`, `cd`, `pwd`, `export`, `unset`, `env`, `exit` | [builtin/](sources/builtin/) |
 | 외부 명령 | PATH에서 실행 파일 탐색, `fork`·`execve`, 자식 프로세스 종료 상태 수집 | [bin.c](sources/exec/bin.c), [bin_util.c](sources/exec/bin_util.c) |
-| 입출력 연결 | `|`, `<`, `>`, `>>`를 파일 디스크립터와 `dup2`로 연결 | [redir.c](sources/redir/redir.c) |
+| 입출력 연결 | 파이프와 `<`, `>`, `>>`를 파일 디스크립터와 `dup2`로 연결 | [redir.c](sources/redir/redir.c) |
 | heredoc | `<<` 입력을 별도 자식 프로세스에서 수집하고 명령의 표준 입력으로 전달 | [heredoc.c](sources/redir/heredoc.c), [heredoc_util.c](sources/redir/heredoc_util.c) |
 | 셸 상태 | 환경 변수 목록 유지, 명령 실행 후 표준 입출력 복원, SIGINT 처리 | [env/](sources/env/), [fd.c](sources/fd.c), [signal.c](sources/signal.c) |
 
