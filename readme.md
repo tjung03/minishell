@@ -4,6 +4,27 @@ C로 구현한 대화형 셸입니다. 입력한 명령을 토큰으로 나누�
 
 이 저장소는 [Minssc/minishell](https://github.com/Minssc/minishell)의 개인 보관본입니다.
 
+## 명령 처리 흐름
+
+```mermaid
+flowchart TD
+    A["Readline 입력"] --> B["따옴표·빈 입력 검사"]
+    B --> C["Token 분리"]
+    C --> D["heredoc 입력 수집"]
+    D --> E["환경 변수 확장"]
+    E --> F["문법 검사·Token 정리"]
+    F --> G["exec_start()"]
+    G --> H["Pipe / Redirect / heredoc FD 연결"]
+    H --> I{"Builtin 명령인가?"}
+    I -->|"Yes"| J["Builtin 실행"]
+    I -->|"No"| K["PATH 탐색·외부 명령 실행"]
+    J --> L["표준 입출력 복원·종료 상태 갱신"]
+    K --> L
+    L --> A
+```
+
+입력 해석 단계는 `parse()`에서 Token을 만든 뒤 `heredoc_init()`, 환경 변수 확장, 문법 검사를 거칩니다. 실행 단계는 Redirect와 Pipe에 맞춰 파일 디스크립터를 연결한 뒤 Builtin 또는 외부 명령으로 분기하고, 한 명령 처리가 끝나면 표준 입출력을 복원합니다. 이 그림은 **팀 프로젝트 전체의 실행 흐름**이며, 개인 기여 범위는 아래 [협업과 기여](#협업과-기여)에서 별도로 구분합니다.
+
 ## 코드 구조
 
 ```text
