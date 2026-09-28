@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" role="img" aria-labelledby="title desc">
+<title id="title">minishell · 명령 처리 흐름</title><desc id="desc">Readline 입력을 Token으로 나누고 heredoc과 환경 변수 확장, 문법 검사와 정리를 수행한 뒤 파이프와 리다이렉션을 연결하고 Builtin 또는 외부 명령을 실행한다.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#64748b"/></marker></defs>
+<rect width="1000" height="500" rx="16" fill="#f8fafc"/><g font-family="Arial,'Noto Sans CJK KR','Malgun Gothic',sans-serif">
+<text x="32" y="44" font-size="27" font-weight="700" fill="#17253b">minishell · 명령 처리 흐름</text>
+<text x="32" y="74" font-size="16" fill="#4b5e78">입력 · 해석 · FD 연결 · 실행 · 상태 복원</text>
+<rect x="32" y="104" width="936" height="95" rx="12" fill="#edf2ff" stroke="#b8c7e3"/>
+<text x="52" y="136" font-size="17" font-weight="700" fill="#4865a0">01  입력</text>
+<rect x="220" y="123" width="250" height="58" rx="10" fill="#fff" stroke="#cbd5e1"/><text x="240" y="158" font-size="18" font-weight="700" fill="#163b76">Readline 입력</text>
+<rect x="515" y="123" width="280" height="58" rx="10" fill="#fff" stroke="#cbd5e1"/><text x="535" y="158" font-size="18" font-weight="700" fill="#163b76">따옴표 · 빈 입력 검사</text>
+<path d="M470 152 H505" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="32" y="215" width="936" height="126" rx="12" fill="#fff" stroke="#b8c7e3"/>
+<text x="52" y="247" font-size="17" font-weight="700" fill="#4865a0">02  해석</text>
+<rect x="194" y="239" width="180" height="76" rx="10" fill="#f5f8ff" stroke="#cbd5e1"/><text x="212" y="268" font-size="17" font-weight="700" fill="#163b76">Token 분리</text><text x="212" y="294" font-size="14" fill="#263a54">Pipe · Redirect 포함</text>
+<rect x="407" y="239" width="180" height="76" rx="10" fill="#f5f8ff" stroke="#cbd5e1"/><text x="425" y="268" font-size="17" font-weight="700" fill="#163b76">heredoc</text><text x="425" y="294" font-size="14" fill="#263a54">입력 수집</text>
+<rect x="620" y="239" width="180" height="76" rx="10" fill="#f5f8ff" stroke="#cbd5e1"/><text x="638" y="268" font-size="17" font-weight="700" fill="#163b76">환경 변수 확장</text><text x="638" y="294" font-size="14" fill="#263a54">문법 검사 · Token 정리</text>
+<path d="M374 277 H397" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/><path d="M587 277 H610" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="32" y="357" width="936" height="111" rx="12" fill="#ecf8f4" stroke="#a9d5c6"/>
+<text x="52" y="389" font-size="17" font-weight="700" fill="#086b62">03  실행</text>
+<rect x="194" y="381" width="220" height="64" rx="10" fill="#fff" stroke="#cbd5e1"/><text x="212" y="408" font-size="17" font-weight="700" fill="#086b62">Pipe / Redirect FD 연결</text><text x="212" y="432" font-size="14" fill="#263a54">heredoc 포함</text>
+<rect x="447" y="381" width="165" height="64" rx="10" fill="#fff" stroke="#cbd5e1"/><text x="465" y="418" font-size="17" font-weight="700" fill="#086b62">Builtin 실행</text>
+<rect x="645" y="381" width="205" height="64" rx="10" fill="#fff" stroke="#cbd5e1"/><text x="663" y="408" font-size="17" font-weight="700" fill="#086b62">외부 명령 실행</text><text x="663" y="432" font-size="14" fill="#263a54">PATH 탐색 · fork/execve</text>
+<path d="M414 413 H437" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/><path d="M414 427 C500 474 610 474 645 427" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+</g></svg>
