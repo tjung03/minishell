@@ -15,7 +15,7 @@
 
 <rect x="250" y="174" width="160" height="86" rx="10" fill="#fff" stroke="#cbd5e1"/>
 <text x="270" y="203" font-size="17" font-weight="700" fill="#163b76">Token 분리</text>
-<text x="270" y="229" font-size="14" fill="#263a54">Pipe · Redirect 포함</text>
+<text x="270" y="229" font-size="14" fill="#263a54">Pipe · Redirect</text>
 
 <rect x="440" y="174" width="160" height="86" rx="10" fill="#fff" stroke="#cbd5e1"/>
 <text x="460" y="203" font-size="17" font-weight="700" fill="#163b76">heredoc</text>
