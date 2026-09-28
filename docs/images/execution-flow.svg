@@ -26,8 +26,8 @@
 <text x="647" y="239" font-size="14" fill="#263a54">STDIN/STDOUT 복원 · FD 정리</text>
 <text x="647" y="260" font-size="14" fill="#263a54">waitpid · Exit Status 반영</text>
 
-<path d="M273 205 H325 V172" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
-<path d="M273 249 H325 V282" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M273 205 H315 V172 H335" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M273 249 H315 V282 H335" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
 <path d="M550 172 H590 V205 H615" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
 <path d="M550 282 H590 V249 H615" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
 
